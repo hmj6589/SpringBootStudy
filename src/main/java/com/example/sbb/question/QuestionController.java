@@ -1,7 +1,5 @@
 package com.example.sbb.question;
 
-import java.util.List;
-
 import com.example.sbb.answer.AnswerForm;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
