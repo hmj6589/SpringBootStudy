@@ -3,18 +3,13 @@ package com.example.sbb.question;
 import java.time.LocalDateTime;
 
 import com.example.sbb.answer.Answer;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.example.sbb.user.SiteUser;
+import jakarta.persistence.*;
 
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.OneToMany;
 
 @Getter
 @Setter
@@ -34,4 +29,7 @@ public class Question {
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
     private List<Answer> answerList;
+
+    @ManyToOne
+    private SiteUser author;
 }
